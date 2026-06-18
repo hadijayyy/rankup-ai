@@ -137,7 +137,7 @@ class ReplyDrafter:
                     {"role": "user", "content": prompt},
                 ],
                 temperature=0.3,  # Lower temperature for consistent, professional replies
-                max_tokens=800,  # DeepSeek V4 Flash: ~600 tokens reasoning + 200 content
+                max_tokens=1500,  # DeepSeek V4 Flash: ~600 tokens reasoning + 900 content
                 response_format={"type": "json_object"},
             )
         except (APIError, RateLimitError) as exc:
