@@ -1,0 +1,43 @@
+# RankUp AI - Global Configuration
+# Copy this to config.yaml and fill in your values
+
+# LLM Settings
+llm:
+  provider: opencode-go
+  base_url: https://api.opencode-go.com/v1
+  model: deepseek-v4-flash
+  api_key_env: OPENAI_API_KEY  # reads from environment variable
+
+# Scraper Settings
+scraper:
+  headless: true
+  timeout: 30000
+  min_delay: 1.0
+  max_delay: 3.0
+  max_retries: 3
+  max_reviews: 100
+
+# Dashboard Settings
+dashboard:
+  google_service_account_env: GOOGLE_SERVICE_ACCOUNT_JSON
+  spreadsheet_prefix: "RankUpAI"
+
+# Notification Settings
+notification:
+  smtp_host: smtp.gmail.com
+  smtp_port: 587
+  smtp_email_env: SMTP_EMAIL
+  smtp_password_env: SMTP_PASSWORD
+
+# Scheduler Settings
+scheduler:
+  daily_scrape_time: "08:00"
+  weekly_report_day: "monday"
+  weekly_report_time: "09:00"
+
+# Pipeline Settings
+pipeline:
+  parallel_tasks: true
+  max_concurrent: 3
+  retry_on_failure: true
+  max_retries: 2
