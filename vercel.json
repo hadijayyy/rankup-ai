@@ -3,7 +3,8 @@
   "builds": [
     {
       "src": "api/index_minimal.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python",
+      "config": { "maxDuration": 10 }
     },
     {
       "src": "dashboard/static/**",
@@ -20,7 +21,7 @@
       "dest": "/dashboard/static/$1"
     },
     {
-      "src": "/",
+      "src": "/(.*)",
       "dest": "/dashboard/static/index.html"
     }
   ]
