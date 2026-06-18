@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "dashboard/static/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/index.py"
+    },
+    {
+      "src": "/static/(.*)",
+      "dest": "/dashboard/static/$1"
+    },
+    {
+      "src": "/",
+      "dest": "/dashboard/static/index.html"
+    }
+  ],
+  "env": {
+    "OPENCODE_GO_API_KEY": "@opencode-go-api-key",
+    "LLM_MODEL": "deepseek-v4-flash",
+    "LLM_TEMPERATURE": "0.3",
+    "LLM_MAX_TOKENS": "1500"
+  }
+}

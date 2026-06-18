@@ -1,8 +1,21 @@
-# RankUp AI - TikTok Shop Listing Optimization + Review Management
+# RankUp AI - TikTok Shop Review Management
+# Dependencies for Vercel deployment
+
+# Core
+flask>=3.0.0
+flask-cors>=4.0.0
+
+# LLM Integration
 openai>=1.0.0
+
+# Web Scraping (for future features)
 playwright>=1.40.0
+
+# Data & API
 gspread>=5.0.0
 google-auth>=2.0.0
+
+# Utilities
 pyyaml>=6.0
 apscheduler>=3.10.0
 aiohttp>=3.9.0
